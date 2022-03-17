@@ -7,7 +7,7 @@ The scope of this practice is building a Webapp to handle a to-do-list, in which
 
 First of all we are going to setup our environment in AWS: 
 
-- Creation a personal AWS account.
+- Creation of personal AWS account.
 
   Our first steps will be to create an AWS account through this [link](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct&src=default), where you will have to populate your personal data accordingly. 
   ![AWS account](https://user-images.githubusercontent.com/39458920/158795611-54b088ba-4135-4e9c-9795-86a36121ce95.JPG)
