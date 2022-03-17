@@ -57,12 +57,12 @@ First of all we are going to setup our environment in AWS:
     ]
 }
 ```
- We click on <b>Create policy</b>, now we select <b>Targets</b> and then we go on <b>Attach</b> tab, to attach the policy to our Organizational Unit closer than our account.
+ We click on <b>Create policy</b>, now we select <b>Targets</b> and then we go on <b>Attach</b> tab, to attach the policy to our Organizational Unit closer than our     account.
  And you should see a pop up message <b>"Successfully attached the policy 'RestrictRegion' to OU 'KeepCoding3'."</b>
 
 - Generating a billing alarm.
 
   To configure it we should go on AWS Budgets, select <b>Cost Budget</b>, and on <b>Next.</b>
-  We select monthly period, recurring budget to renew it every month. The Budget method should be <b>"Fixed"</b>, entering the budgeted amount, and we have set the       name as <b>"My Budget".</b>
+  We select monthly period, recurring budget to renew it every month. The Budget method selected is <b>"Fixed"</b>, we enter the budgeted amount, and we have set the     name as <b>"My Budget".</b>
   
-  Once we have defined the budget, we set the alert. On this we have set two alerts, one when the budgeted threshold exceeds 10% and another one when forecasted cost     is greater than 100% of the budgeted amount. Note we will be informed via email about these alerts.
+  Once we have defined the budget, we set the alert. On this we have set two alerts, one when the budgeted threshold exceeds 10% and another one when forecasted cost     is greater than 100% of the budgeted amount. As notification preference we choice email address to be informed about these billing alerts.
