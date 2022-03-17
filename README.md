@@ -21,7 +21,9 @@ First of all we are going to setup our environment in AWS:
   
 ![MFA code](https://user-images.githubusercontent.com/39458920/158809945-dbcb195c-ad36-4bea-b059-5a83f823e38d.JPG)
 
-Now you will see the IAM dashboard as follows:
+   Now you will see the IAM dashboard as follows:
+
+![IAM dashboard](https://user-images.githubusercontent.com/39458920/158830580-bcdf361c-78cc-4590-9b19-eb03701bbf81.JPG)
 
   
 - Creating OUs in order to apply SCPs
