@@ -26,4 +26,5 @@ First of all we are going to setup our environment in AWS:
 ![IAM dashboard](https://user-images.githubusercontent.com/39458920/158830580-bcdf361c-78cc-4590-9b19-eb03701bbf81.JPG)
 
   
-- Creating OUs in order to apply SCPs
+- Creating an organization in AWS to be able to set policies, servicies, and so on.
+Search for <b>AWS organization</b> and click on <b>Create an Organization</b>.
