@@ -12,6 +12,11 @@ First of all we are going to setup our environment in AWS:
   Our first steps will be to create an AWS account through this [link](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct&src=default), where you will have to populate your personal data accordingly. 
   ![AWS account](https://user-images.githubusercontent.com/39458920/158795611-54b088ba-4135-4e9c-9795-86a36121ce95.JPG)
 
+- Enabing MFA in root access.
   
-- Enabing MFA in root access
+  You will have to access in IAM dashboard, and in security recommendations you will see the option <b>Add MFA for root user</b>, click on <b>add MFA</b> tab.
+  
+  We advise to activate it with virtual MFA device, where you need an authenticator app installed on your mobile device. We highly recommend to use Google authenticator app.
+  We proceed to scan the QR code with the app and introduce the corresponding codes.
+  
 - Creating OUs in order to apply SCPs
