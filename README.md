@@ -27,4 +27,6 @@ First of all we are going to setup our environment in AWS:
 
   
 - Creating an organization in AWS to be able to set policies, servicies, and so on.
-Search for <b>AWS organization</b> and click on <b>Create an Organization</b>.
+
+  Search for <b>AWS organization</b> and click on <b>Create an Organization</b>. Now you will see your organizational structure.
+![aws organization](https://user-images.githubusercontent.com/39458920/158848951-9d06c9d9-a42d-4f2f-9ec2-a59ba7619cbc.JPG)
