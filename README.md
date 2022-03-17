@@ -32,7 +32,7 @@ First of all we are going to setup our environment in AWS:
   For this we have implemented the following JSON code where we specified the regions where we have denied resources.
 ```bash
 {
-    "Version": "2022-03-17",
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Sid": "DenyAllOutsideRequestedRegions",
