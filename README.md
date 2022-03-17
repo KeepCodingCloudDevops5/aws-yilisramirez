@@ -5,9 +5,8 @@ The scope of this practice is building a Webapp to handle a to-do-list, in which
 
 <h1>Requirements</h1>
 
-<ul>
-<li>Creation a personal AWS account </li>
-<li>Enabing MFA in root access </li>
-<li>Creating OUs in order to apply SCPs </li>
-</lu>
+First of all we are going to setup our environment in AWS: 
 
+- Creation a personal AWS account
+- Enabing MFA in root access
+- Creating OUs in order to apply SCPs
