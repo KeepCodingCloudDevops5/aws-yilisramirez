@@ -30,3 +30,32 @@ First of all we are going to setup our environment in AWS:
 
   Search for <b>AWS organization</b> and click on <b>Create an Organization</b>. Now you will see your organizational structure.
 ![aws organization](https://user-images.githubusercontent.com/39458920/158848951-9d06c9d9-a42d-4f2f-9ec2-a59ba7619cbc.JPG)
+
+
+```bash
+{
+    "Version": "2022-03-17",
+    "Statement": [
+        {
+            "Sid": "DenyAllOutsideRequestedRegions",
+            "Effect": "Deny",
+            "NotAction": [
+                "cloudfront:*",
+                "iam:*",
+                "route53:*",
+                "support:*",
+                "organizations:*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": [
+                        "sa-east-1",
+                        "eu-west-3"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
