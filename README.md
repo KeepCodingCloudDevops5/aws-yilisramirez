@@ -20,5 +20,8 @@ First of all we are going to setup our environment in AWS:
   We proceed to scan the QR code with the app and introduce the corresponding codes.
   
 ![MFA code](https://user-images.githubusercontent.com/39458920/158809945-dbcb195c-ad36-4bea-b059-5a83f823e38d.JPG)
+
+Now you will see the IAM dashboard as follows:
+
   
 - Creating OUs in order to apply SCPs
