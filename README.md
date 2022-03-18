@@ -72,3 +72,11 @@ First of all we are going to setup our environment in AWS:
   As one of best practices advised by Amazon, we are going to remove the default VPC of Ireland which is where our practice is based, so we search for VPC option in our AWS account, select the single VPC listed and proceed to delete and confirm it. 
 
   ![default vpc](https://user-images.githubusercontent.com/39458920/159047926-4dff5acc-01ca-42e4-ba8f-19d423f5cd53.JPG)
+  
+# Network Topology
+
+# Database
+
+# Roles
+
+# Webserver
