@@ -12,7 +12,7 @@ First of all we are going to setup our environment in AWS:
   Our first steps will be to create an AWS account through this [link](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct&src=default), where you will have to populate your personal data accordingly. 
   ![AWS account](https://user-images.githubusercontent.com/39458920/158795611-54b088ba-4135-4e9c-9795-86a36121ce95.JPG)
 
-- Enabing MFA in root access.
+- Enable MFA in root access.
   
   You will have to access in IAM dashboard, and in security recommendations you will see the option <b>Add MFA for root user</b>, click on <b>add MFA</b> tab.
   
@@ -22,7 +22,7 @@ First of all we are going to setup our environment in AWS:
 
 ![IAM dashboard](https://user-images.githubusercontent.com/39458920/158830580-bcdf361c-78cc-4590-9b19-eb03701bbf81.JPG)
   
-- Creating an organization in AWS to be able to set policies, servicies, and so on.
+- Create an organization in AWS to be able to set policies, servicies, and so on.
 
   Search for <b>AWS organization</b> and click on <b>Create an Organization</b>. Now you will see your organizational structure.
 ![aws organization](https://user-images.githubusercontent.com/39458920/158848951-9d06c9d9-a42d-4f2f-9ec2-a59ba7619cbc.JPG)
@@ -60,9 +60,12 @@ First of all we are going to setup our environment in AWS:
  We click on <b>Create policy</b>, now we select <b>Targets</b> and then we go on <b>Attach</b> tab, to attach the policy to our Organizational Unit closer than our     account.
  And you should see a pop up message <b>"Successfully attached the policy 'RestrictRegion' to OU 'KeepCoding3'."</b>
 
-- Generating a billing alarm.
+- Generate a billing alarm.
 
   To configure it we should go on AWS Budgets, select <b>Cost Budget</b>, and on <b>Next.</b>
   We select monthly period, recurring budget to renew it every month. The Budget method selected is <b>"Fixed"</b>, we enter the budgeted amount, and we have set the     name as <b>"My Budget".</b>
   
   Once we have defined the budget, we set the alert. On this we have set two alerts, one when the budgeted threshold exceeds 10% and another one when forecasted cost     is greater than 100% of the budgeted amount. As notification preference we choice email address to be informed about these billing alerts.
+  
+- Delete default VPC
+  As one of best practices advised by Amazon, we are going to remove the default VPC of Ireland which is where our practice is based, so we search VPC option in our AWS account, select the single VPC listed and proceed to delete and confirm it. 
