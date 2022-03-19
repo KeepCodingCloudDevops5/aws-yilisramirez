@@ -76,7 +76,9 @@ First of all we are going to setup our environment in AWS:
 # Network Topology
 To design a network topology we will start creating a VPC as shown below.
 
-We have also enabled DNS hostnames, DNS resolution and we have set the IPv4 172.24.0.0/16
+![MyVPC](https://user-images.githubusercontent.com/39458920/159136749-9435b4c0-43f8-49d1-b098-dd846fe73e71.JPG)
+
+We have also enabled DNS hostnames, DNS resolution to deploy the database, and set the IPv4 172.24.0.0/16
 
 
 # Database
