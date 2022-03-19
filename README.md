@@ -95,6 +95,7 @@ We added a new route with IP destination 0.0.0.0/0 and the internet gateway prev
 ![route-table](https://user-images.githubusercontent.com/39458920/159137750-c7822221-0745-476b-80c3-aa71c7921268.JPG)
 
 As last setting, we define another <b>Route Table</b> for private Subnets, but in this case we will not include any other route, as it's a private subnet which does not need outbound internet.
+![route-table-privada](https://user-images.githubusercontent.com/39458920/159138440-feeb17bf-5c53-4e31-8377-ff58ca71b7d0.JPG)
 
 # Database
 
