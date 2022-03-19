@@ -84,6 +84,10 @@ Now we will create the public and private Subnets. Where the private ones the da
 
 ![subnets](https://user-images.githubusercontent.com/39458920/159137064-8e41bf8c-5283-423a-9475-7739985b9486.JPG)
 
+To enable the outbound internet in the public Subnets, we will add the internet gateway and attach it to the VPC.
+
+![igw](https://user-images.githubusercontent.com/39458920/159137158-20a7bb91-43d9-444a-b8f6-3eea1e6261d0.JPG)
+
 # Database
 
 # Roles
