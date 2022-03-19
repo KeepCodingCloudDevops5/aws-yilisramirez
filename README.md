@@ -74,25 +74,27 @@ First of all we are going to setup our environment in AWS:
   ![default vpc](https://user-images.githubusercontent.com/39458920/159047926-4dff5acc-01ca-42e4-ba8f-19d423f5cd53.JPG)
   
 # Network Topology
-To design a network topology we will start creating a VPC as shown below.
+To design a network topology we will start creating a <b>VPC</b> as shown below.
 
 ![MyVPC](https://user-images.githubusercontent.com/39458920/159136749-9435b4c0-43f8-49d1-b098-dd846fe73e71.JPG)
 
-We have also enabled DNS hostnames, DNS resolution to deploy the database, and set the IPv4 172.24.0.0/16
+We have also enabled DNS hostnames, DNS resolution to deploy the database, and set the <b>IPv4 172.24.0.0/16</b>
 
 Now we will create the public and private Subnets. Where the private ones the database is provisioned, while the public ones the Loadbalancer and Webapp are provisioned.
 
 ![subnets](https://user-images.githubusercontent.com/39458920/159137064-8e41bf8c-5283-423a-9475-7739985b9486.JPG)
 
-To enable the outbound internet in the public Subnets, we will add the internet gateway and attach it to the VPC.
+To enable the outbound internet in the public Subnets, we will add the <b>Internet Gateway</b> and attach it to the VPC.
 
 ![igw](https://user-images.githubusercontent.com/39458920/159137158-20a7bb91-43d9-444a-b8f6-3eea1e6261d0.JPG)
 
-Now we are going to edit the Route Table automatically created and select the two public Subnets, which require internet access.
+Now we are going to edit the <b>Route Table</b> automatically created and select the two public Subnets, which require internet access.
 
 We added a new route with IP destination 0.0.0.0/0 and the internet gateway previously created as target.
 
 ![route-table](https://user-images.githubusercontent.com/39458920/159137750-c7822221-0745-476b-80c3-aa71c7921268.JPG)
+
+As last setting, we define another <b>Route Table</b> for private Subnets, but in this case we will not include any other route, as it's a private subnet which does not need outbound internet.
 
 # Database
 
