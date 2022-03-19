@@ -88,6 +88,10 @@ To enable the outbound internet in the public Subnets, we will add the internet 
 
 ![igw](https://user-images.githubusercontent.com/39458920/159137158-20a7bb91-43d9-444a-b8f6-3eea1e6261d0.JPG)
 
+Now we are going to configure the Route Table. Note when a VPC is created a Route Table is enabled by default, therefore we proceed to edit it, and then we select the public Subnets, which they are that need internet access.
+
+We added a new route with IP destination 0.0.0.0/0 and the internet gateway previously created as target.
+
 # Database
 
 # Roles
