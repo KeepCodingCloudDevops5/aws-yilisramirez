@@ -88,7 +88,7 @@ To enable the outbound internet in the public Subnets, we will add the internet 
 
 ![igw](https://user-images.githubusercontent.com/39458920/159137158-20a7bb91-43d9-444a-b8f6-3eea1e6261d0.JPG)
 
-Now we are going to edit the Route Table automatically created and select the two public Subnets, which they are that need internet access.
+Now we are going to edit the Route Table automatically created and select the two public Subnets, which require internet access.
 
 We added a new route with IP destination 0.0.0.0/0 and the internet gateway previously created as target.
 
