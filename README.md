@@ -80,8 +80,9 @@ To design a network topology we will start creating a VPC as shown below.
 
 We have also enabled DNS hostnames, DNS resolution to deploy the database, and set the IPv4 172.24.0.0/16
 
-Now we will create the public and private Subnets. Where the private ones the database is provisioned and the public ones the Loadbalancer and Webapp are provisioned.
+Now we will create the public and private Subnets. Where the private ones the database is provisioned, while the public ones the Loadbalancer and Webapp are provisioned.
 
+![subnets](https://user-images.githubusercontent.com/39458920/159137064-8e41bf8c-5283-423a-9475-7739985b9486.JPG)
 
 # Database
 
