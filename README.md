@@ -46,7 +46,7 @@ First of all we are going to setup our environment in AWS:
             ],
             "Resource": "*",
             "Condition": {
-                "StringNotEquals": {
+                "StringEquals": {
                     "aws:RequestedRegion": [
                         "sa-east-1",
                         "eu-west-3"
