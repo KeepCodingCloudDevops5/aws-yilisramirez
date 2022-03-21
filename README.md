@@ -3,7 +3,7 @@ Práctica de migración a la nube AWS - Yilis Ramirez
 
 The scope of this practice is building a Webapp to handle a to-do-list, in which we wil add items in a text box and when pressing enter it is added into the list. And if you make click in some of the items, it is deleted.
 
-<h1>Requirements</h1>
+# 1. Requirements
 
 First of all we are going to setup our environment in AWS: 
 
@@ -73,7 +73,7 @@ First of all we are going to setup our environment in AWS:
 
   ![default vpc](https://user-images.githubusercontent.com/39458920/159047926-4dff5acc-01ca-42e4-ba8f-19d423f5cd53.JPG)
   
-# Network Topology
+# 2. Network Topology
 To design a network topology we will start creating a <b>VPC</b> as shown below.
 
 ![MyVPC](https://user-images.githubusercontent.com/39458920/159136749-9435b4c0-43f8-49d1-b098-dd846fe73e71.JPG)
@@ -97,10 +97,14 @@ We added a new route with IP destination 0.0.0.0/0 and the internet gateway prev
 As last setting, we define another <b>Route Table</b> for private Subnets, but in this case we will not include any other route, as it's a private subnet which does not need outbound internet.
 ![route-table-privada](https://user-images.githubusercontent.com/39458920/159138440-feeb17bf-5c53-4e31-8377-ff58ca71b7d0.JPG)
 
-# Database
+# 3. Database
+To create the database we should create first a <b>Security Group</b> `kc-rds-sg` for security purposes, in which it only allows incoming requests from TCP 3306 to EC2.
+In adittion, we have created another <b>Security Group</b> for EC2 instances, and a <b>Subnet Group</b> where we specify the private subnets in which the database will be connecting to.
+Once the resources have been created, we will go on <b>RDS-Databases</b>, we choose <b>standard database creation</b> and select MySQL.
+We named the database as <b>"kc-mysql-ddbb"</b>
 
-# Roles
+# 4. Roles
 
-# Webserver
+# 5. Webserver
 
 
