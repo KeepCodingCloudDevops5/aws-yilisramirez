@@ -99,10 +99,16 @@ As last setting, we define another <b>Route Table</b> for private Subnets, but i
 
 # 3. Database
 To create the database we should create first a <b>Security Group</b> `kc-rds-sg` for security purposes, in which it only allows incoming requests from TCP 3306 to EC2.
-In adittion, we have created another <b>Security Group</b> for EC2 instances, and a <b>Subnet Group</b> where we specify the private subnets in which the database will be connecting to.
-Once the resources have been created, we will go on <b>RDS-Databases</b>, we choose <b>standard database creation</b> and select MySQL.
-We named the database as <b>"kc-mysql-ddbb"</b>
 
+In adittion, we have created another <b>Security Group</b> for EC2 instances, and a <b>Subnet Group</b> where we specify the private subnets in which the database will be connecting to.
+
+Once the resources have been created, we will go on <b>RDS-Databases</b>, we choose <b>standard database creation</b> and select MySQL.
+We named the database as `kc-mysql-ddbb`
+
+![database dd](https://user-images.githubusercontent.com/39458920/159294720-c08cf0bd-3e17-4b15-865d-ba30705f1f86.JPG)
+
+After the database has been created, we proceed to store the connection details into a <b>Secret Manager</b> with the name `rtb-db-secret`
+                                                                                        
 # 4. Roles
 
 # 5. Webserver
