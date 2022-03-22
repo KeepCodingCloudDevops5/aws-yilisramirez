@@ -110,7 +110,7 @@ We named the database as `kc-mysql-ddbb`
 After the database has been created, we proceed to store the connection details into a <b>Secret Manager</b> with the name `rtb-db-secret`
                                                                                         
 # 4. Roles
-
+To get the connection details of database, we provide access from EC2 to secret manager by stating IAM role for EC2 instance, which we named `EC2RoleToAccessSecrets` and we attach the policy `SecretsManagerReadWrite`
 # 5. Webserver
 
 
