@@ -158,8 +158,10 @@ Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` throug
 
 # 5. Webserver
 
-To create a EC2 instance we need a <b>Key pair</b> created, so we proceed to generate it with the name `kc-ec2-keys` and we download and keep it in a safe place.
+To create a EC2 instance we need a <b>Key pair</b> created, so we proceed to generate it with the name `kc-ec2-keys`, download and keep it in a safe place.
 
 We set <b>Security Group</b> for EC2 on which we specify for incoming requests to TCP port 8080 from Load Balancer and outbound requests to TCP port 3306 towards database, and other outgoing traffic towards internet.
 
 In adittion, we create another <b>Security Group</b> for the Load Balancer in which we allow incoming requests to TCP port 80 from internet and outbound requests to TCP port 8080 towards EC2 instance.
+
+After defined the required Security Groups, we need to create a <b>Target Group</b> that is linked to the load balancer with listener at the port HTTP 8080
