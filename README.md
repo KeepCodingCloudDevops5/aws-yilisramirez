@@ -114,7 +114,7 @@ To get the connection details of database, we provide access from EC2 to secret 
 
 ![IAM role](https://user-images.githubusercontent.com/39458920/159451638-68c02c83-3bf9-4c1b-afe6-3f53e6fe2f78.JPG)
 
-Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` through this JSON code.
+Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` through this JSON code in order to enable the connection.
 
 ```bash
 {
