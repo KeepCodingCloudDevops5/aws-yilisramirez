@@ -73,6 +73,30 @@ First of all we are going to setup our environment in AWS:
 
   ![default vpc](https://user-images.githubusercontent.com/39458920/159047926-4dff5acc-01ca-42e4-ba8f-19d423f5cd53.JPG)
   
+ - <b>Proving access to AWS account</b>
+ 
+   We have generated a role cross account towards the account id `920348516674` with the policy `AdministratorAccess`
+   
+   ```bash
+   {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Principal": {
+                "AWS": "920348516674"
+            },
+            "Condition": {
+                "Bool": {
+                    "aws:MultiFactorAuthPresent": true
+                }
+            }
+        }
+    ]
+}
+```
+   
 # 2. Network Topology
 To design a network topology we will start creating a <b>VPC</b> as shown below.
 
