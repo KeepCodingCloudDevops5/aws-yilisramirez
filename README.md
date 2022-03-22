@@ -111,6 +111,26 @@ After the database has been created, we proceed to store the connection details 
                                                                                         
 # 4. Roles
 To get the connection details of database, we provide access from EC2 to secret manager by stating IAM role for EC2 instance, which we named `EC2RoleToAccessSecrets` and we attach the policy `SecretsManagerReadWrite`
+
+![IAM role](https://user-images.githubusercontent.com/39458920/159451638-68c02c83-3bf9-4c1b-afe6-3f53e6fe2f78.JPG)
+
+Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` through this JSON code.
+
+```bash
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::124678637394:role/EC2RoleToAccessSecrets"
+      },
+      "Action": "secretsmanager:GetSecretValue",
+      "Resource": "*"
+    }
+  ]
+}
+```
 # 5. Webserver
 
 
