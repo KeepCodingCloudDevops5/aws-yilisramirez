@@ -75,10 +75,10 @@ First of all we are going to setup our environment in AWS:
   
  - <b>Proving access to AWS account</b>
  
-   We have generated a role cross account towards the account id `920348516674` with the policy `AdministratorAccess`
+   We need to create a role cross account towards the account id `920348516674` to grant the proper access to this project. So we select on <b>AWS Account</b>, add the mentioned account id above, and on <b>Permissions</b> we choose the policy `AdministratorAccess` as shown below:
    
-   ```bash
-   {
+```bash
+{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -96,7 +96,7 @@ First of all we are going to setup our environment in AWS:
     ]
 }
 ```
-   
+
 # 2. Network Topology
 To design a network topology we will start creating a <b>VPC</b> as shown below.
 
@@ -155,6 +155,7 @@ Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` throug
   ]
 }
 ```
+
 # 5. Webserver
 
 
