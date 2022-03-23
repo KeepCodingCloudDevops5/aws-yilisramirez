@@ -177,3 +177,5 @@ In the user data section, we have added a script which contains the docker insta
 ![launch_template](https://user-images.githubusercontent.com/39458920/159678754-73e1750b-5fc1-4aab-802e-85d88d9f2b06.JPG)
 
 Once created the <b>Launch template</b>, we proceed to define the <b>Autoscaling group</b> with the details shown below:
+
+![autoscaling](https://user-images.githubusercontent.com/39458920/159682336-ab84765f-4ce8-48bb-9f07-a98a697057bf.JPG)
