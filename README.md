@@ -168,8 +168,12 @@ After defined the required Security Groups, we need to create a <b>Target Group<
 
 ![target group](https://user-images.githubusercontent.com/39458920/159678248-bb0db6f7-9f54-49bb-9da8-d08e775a9273.JPG)
 
+Then we proceed to create the load balancer, which will be in charge of receiving traffic from IPv4 at the port HTTP 80, and relate the corresponding Security Group and Target Group.
+
 To deploy the EC2 instance we have configured first the <b>Launch Template</b> with all details needed, such as, the instance type, network interfaces, the required AMI (ami-05cd35b907b4ffe77), and auto-assigning of public IP to provide it outbound internet.
 
 In the user data section, we have added a script which contains the docker installation, the webapp image and the command to run a container in port 8080.
 
 ![launch_template](https://user-images.githubusercontent.com/39458920/159678754-73e1750b-5fc1-4aab-802e-85d88d9f2b06.JPG)
+
+Once created the <b>Launch template</b>, we proceed to define the <b>Autoscaling group</b> with the details shown below:
