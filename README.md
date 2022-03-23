@@ -172,7 +172,7 @@ Then we proceed to create the load balancer, which will be in charge of receivin
 
 To deploy the EC2 instance we have configured first the <b>Launch Template</b> with all details needed, such as, the instance type, network interfaces, the required AMI (ami-05cd35b907b4ffe77), and auto-assigning of public IP to provide it outbound internet.
 
-In the user data section, we have added a script which contains the docker installation, the webapp image and the command to run a container in port 8080.
+In the user data section, we have added a script which contains the docker installation, the webapp image and the command to run a container, and expose it to the port 8080.
 
 ![launch_template](https://user-images.githubusercontent.com/39458920/159678754-73e1750b-5fc1-4aab-802e-85d88d9f2b06.JPG)
 
