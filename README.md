@@ -166,6 +166,8 @@ In adittion, we create another <b>Security Group</b> for the Load Balancer in wh
 
 After defined the required Security Groups, we need to create a <b>Target Group</b> that is linked to the load balancer with listener at the port HTTP 8080. We have also set the healthcheck to validate the app endpoint is working as expected.
 
+![target group](https://user-images.githubusercontent.com/39458920/159678248-bb0db6f7-9f54-49bb-9da8-d08e775a9273.JPG)
+
 To deploy the EC2 instance we have configured first the <b>Launch Template</b> with all details needed, such as, the instance type, network interfaces, the required AMI (ami-05cd35b907b4ffe77), and auto-assigning of public IP to provide it outbound internet.
 
 In the user data section, we have added a script which contains the docker installation, the webapp image and the command to run a container in port 8080.
