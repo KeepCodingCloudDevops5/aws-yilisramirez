@@ -179,3 +179,6 @@ In the user data section, we have added a script which contains the docker insta
 Once created the <b>Launch template</b>, we proceed to define the <b>Autoscaling group</b> with the details shown below:
 
 ![autoscaling](https://user-images.githubusercontent.com/39458920/159682336-ab84765f-4ce8-48bb-9f07-a98a697057bf.JPG)
+
+Now we can see the EC2 instance has been properly generated.
+![EC2 instance](https://user-images.githubusercontent.com/39458920/159682536-5b0c1689-9e61-42d0-aaca-cff58d3be2e2.JPG)
