@@ -1,7 +1,7 @@
 # aws-yilisramirez
 Práctica de migración a la nube AWS - Yilis Ramirez
 
-The scope of this practice is building a Webapp to handle a to-do-list, in which we wil add items in a text box and when pressing enter it is added into the list. And if you make click in some of the items, it is deleted.
+The purpose of this practice is building a Webapp to handle a to-do-list, in which we wil add items in a text box and when pressing enter it is added into the list. And if you make click in some of the items, it is deleted.
 
 # 1. Requirements
 
@@ -122,9 +122,9 @@ As last setting, we define another <b>Route Table</b> for private Subnets, but i
 ![route-table-privada](https://user-images.githubusercontent.com/39458920/159138440-feeb17bf-5c53-4e31-8377-ff58ca71b7d0.JPG)
 
 # 3. Database
-To create the database we should create first a <b>Security Group</b> `kc-rds-sg` for security purposes, in which it only allows incoming requests from TCP 3306 to EC2.
+To create the database we need to establish the connection between the webapp and database, so we create first a <b>Security Group</b> `kc-rds-sg` for security purposes, in which it only allows incoming requests to TCP port 3306 from webapp.
 
-In adittion, we have created another <b>Security Group</b> for EC2 instances, and a <b>Subnet Group</b> where we specify the private subnets in which the database will be connecting to.
+In adittion, we have created another <b>Security Group</b> for EC2 instances, and a <b>Subnet Group</b> where we specify the private subnets in which the database will be connecting to `kc-mysql-ddbb-sg`.
 
 Once the resources have been created, we will go on <b>RDS-Databases</b>, we choose <b>standard database creation</b> and select MySQL.
 We named the database as `kc-mysql-ddbb`
@@ -134,37 +134,32 @@ We named the database as `kc-mysql-ddbb`
 After the database has been created, we proceed to store the connection details into a <b>Secret Manager</b> with the name `rtb-db-secret`
                                                                                         
 # 4. Roles
-To get the connection details of database, we provide access from EC2 to secret manager by stating IAM role for EC2 instance, which we named `EC2RoleToAccessSecrets` and we attach the policy `SecretsManagerReadWrite`
-
-![IAM role](https://user-images.githubusercontent.com/39458920/159451638-68c02c83-3bf9-4c1b-afe6-3f53e6fe2f78.JPG)
-
-Now we proceed to attach the IAM policy to secret manager `rtb-db-secret` through this JSON code in order to enable the connection.
+To get the connection details of database, we provide access from EC2 to secret manager by stating IAM policy for EC2 instance, which we named `secret_policy` with the following JSON code:
 
 ```bash
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::124678637394:role/EC2RoleToAccessSecrets"
-      },
-      "Action": "secretsmanager:GetSecretValue",
-      "Resource": "*"
-    }
-  ]
+    "Statement": [
+        {
+            "Action": "secretsmanager:GetSecretValue",
+            "Effect": "Allow",
+            "Resource": "arn:aws:secretsmanager:eu-west-1:124678637394:secret:rtb-db-secret-8uUnua",
+            "Sid": ""
+        }
+    ],
+    "Version": "2012-10-17"
 }
 ```
+Now from IAM management, we proceed with the role creation `role_access_secret`, and attach permissions to the policy previously created.
 
 # 5. Webserver
 
 To create a EC2 instance we need a <b>Key pair</b> created, so we proceed to generate it with the name `kc-ec2-keys`, download and keep it in a safe place.
 
-We set <b>Security Group</b> for EC2 on which we specify for incoming requests to TCP port 8080 from Load Balancer and outbound requests to TCP port 3306 towards database, and other outgoing traffic towards internet.
+We set <b>Security Group</b> for webapp on which we specify for incoming requests to TCP port 8080 from Load Balancer and outbound requests to TCP port 3306 towards database, and other outgoing traffic towards internet.
 
-In adittion, we create another <b>Security Group</b> for the Load Balancer in which we allow incoming requests to TCP port 80 from internet and outbound requests to TCP port 8080 towards EC2 instance.
+In adittion, we create another <b>Security Group</b> for the Load Balancer in which we allow incoming requests to TCP port 80 from internet and outbound requests to TCP port 8080 towards webapp instance.
 
-After defined the required Security Groups, we need to create a <b>Target Group</b> that is linked to the load balancer with listener at the port HTTP 8080. We have also set the healthcheck to validate the app endpoint is working as expected.
+After defined the required Security Groups, we need to create a <b>Target Group</b> that is linked to the load balancer with listener at the port HTTP 8080. We have also set the healthcheck to validate the app endpoint and establish the connection.
 
 ![target group](https://user-images.githubusercontent.com/39458920/159678248-bb0db6f7-9f54-49bb-9da8-d08e775a9273.JPG)
 
@@ -173,6 +168,14 @@ Then we proceed to create the load balancer, which will be in charge of receivin
 To deploy the EC2 instance we have configured first the <b>Launch Template</b> with all details needed, such as, the instance type, network interfaces, the required AMI (ami-05cd35b907b4ffe77), and auto-assigning of public IP to provide it outbound internet.
 
 In the user data section, we have added a script which contains the docker installation, the webapp image and the command to run a container, and expose it to the port 8080.
+
+```bash
+#! /bin/bash
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+sudo docker run -d --name rtb -p 8080:8080 vermicida/rtb
+```
 
 ![launch_template](https://user-images.githubusercontent.com/39458920/159678754-73e1750b-5fc1-4aab-802e-85d88d9f2b06.JPG)
 
