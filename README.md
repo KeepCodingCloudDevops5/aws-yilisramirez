@@ -185,3 +185,16 @@ Once created the <b>Launch template</b>, we proceed to define the <b>Autoscaling
 
 Now we can see the EC2 instance has been properly generated.
 ![EC2 instance](https://user-images.githubusercontent.com/39458920/159682536-5b0c1689-9e61-42d0-aaca-cff58d3be2e2.JPG)
+
+# 6. Infrastructure as code
+
+We have also deployed the webapp as code in terraform. Note you might need to install Terraform as described [here](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
+
+To run the code you would need to type the following commands:
+
+```bash
+terraform ini --> initialize the environment
+terraform fmt --> format the code
+terraform plan --> validate the code
+terraform apply --> deploy the code
+```
